@@ -1,3 +1,6 @@
+import { hashSync } from '@node-rs/bcrypt';
+
 export function GET(request: Request) {
-  return Response.json({ hello: 'world' });
+  const hash = hashSync('hello world');
+  return Response.json({ hash: 'hash' });
 }
